@@ -6,6 +6,7 @@ import google.generativeai as genai
 # ============================================================
 
 API_KEY = os.getenv("GEMINI_API_KEY")
+API_KEY = st.secrets["GEMINI_API_KEY"]
 
 model = None
 
