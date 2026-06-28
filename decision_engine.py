@@ -1,6 +1,16 @@
 from stress import task_stress, analyze_schedule
 from scheduler import calculate_priority
 
+def autonomous_decision(task):
+
+    if task["difficulty"] >= 4 and task["deadline"] > 3:
+        return "DEFER"
+
+    if task["importance"] >= 5:
+        return "PRIORITY"
+
+    return "NORMAL"
+
 # ============================================================
 # AI 종합 판단 엔진
 # ============================================================
