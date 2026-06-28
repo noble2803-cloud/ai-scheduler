@@ -1,12 +1,14 @@
 import os
 import google.generativeai as genai
-
+import streamlit as st
 # ============================================================
 # Gemini 초기화
 # ============================================================
 
-API_KEY = os.getenv("GEMINI_API_KEY")
-API_KEY = st.secrets["GEMINI_API_KEY"]
+try:
+    API_KEY = st.secrets["GEMINI_API_KEY"]
+except:
+    API_KEY = os.getenv("GEMINI_API_KEY")
 
 model = None
 
